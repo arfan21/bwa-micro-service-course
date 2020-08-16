@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post("mentors", "MentorController@create");
+Route::get("mentors", "MentorController@index");
+Route::get("mentors/{id}", "MentorController@show");
+Route::put("mentors/{id}", "MentorController@update");
+Route::delete("mentors/{id}", "MentorController@destroy");
