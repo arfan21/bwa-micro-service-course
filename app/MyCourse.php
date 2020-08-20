@@ -8,12 +8,17 @@ class MyCourse extends Model
 {
     protected $table = "my_courses";
 
+    protected $casts = [
+        "created_at" => "datetime:Y-m-d H:m:s",
+        "updated_at" => "datetime:Y-m-d H:m:s",
+    ];
+
     protected $fillable = [
         "course_id", "user_id"
     ];
 
     public function course()
     {
-        return $this->belongTo("App\Course");
+        return $this->belongsTo("App\Course");
     }
 }

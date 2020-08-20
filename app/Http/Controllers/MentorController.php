@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use App\Mentor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Log;
 class MentorController extends Controller
 {
     public function index()
     {
-        $mentor = Mentor::all();
+        $mentors = Mentor::all();
         return response()->json([
             "status" => "success",
-            "data" => $mentor
+            "data" => $mentors
         ]);
     }
 
